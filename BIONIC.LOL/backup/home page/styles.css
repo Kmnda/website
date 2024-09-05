@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;800&display=swap');
+
+
+*,*::before, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Poppins" sans-serif;
+    cursor: auto;
+}
+.logo{
+    width: 100px;
+}
+header {
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    padding: 0.9rem 0;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+header nav {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+header ul a{
+    text-decoration: none;
+    color: #fff;
+    padding: 0 1.5rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 0.83rem;
+
+}
+main {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    
+}
+.parallax {
+    pointer-events: none;
+    transition: 0.45s cubic-bezier(0.22,0.5,0.33,0.99);
+    
+}
+.bg-img{
+    position: absolute;
+    z-index: 1;
+    width: 140%;
+    top:50.86%;
+    left: 50.69%;
+    
+}
+.fog-1 {
+    position: absolute;
+    z-index: 5;
+    width: 140%;
+    top: 40.86%;
+    left: 50.69%;
+    
+}
+.front{
+    position: absolute;
+    z-index: 4;
+    width: 130%;
+    top: 50%;
+    left: 45%;
+    
+}
+.text {
+    position: absolute;
+    z-index: 3;
+    top: 10%;
+    left: 50%;
+    pointer-events: auto;
+    text-align: center;
+    color: #fff;
+}
+.text h2{
+    font-weight: 900;
+    font-size: 6.5rem;
+}
+.vignette{
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0)65%, rgba(0, 0, 0, 0.7));
+    pointer-events: none;
+}
+
+@media (max-width: 1100px){
+    .text h2 {
+        font-size: 4.7rem;
+    }
+}
+@media (max-width: 725px){
+    .text h2 {
+        font-size: 2.7rem;
+    }
+    header nav{
+        padding: 0 1rem;
+    }
+    .logo{
+        width: 75px;
+    }
+
+    header ul a{
+        font-size: 0.73rem;
+        padding: 0 0.9rem;
+    }
+    .bg-img{
+        width: initial;
+        height: 224%;
+    }
+    .front{
+        width: inherit;
+        height: 208%;
+    }
+    .fog-1{
+        width: inherit;
+        height: 224%;
+    }
+}  
+@media (max-width: 520px){
+    .text h2 {
+        font-size: 2.6rem;
+    }
+}
+/* boooooooooooooox*/
+.box {
+    position: relative;
+    z-index: 10;
+    width: 30%;
+    height: 30%;
+    display: flex;
+    top: 35%;
+    left: 50%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0, 0.5);
+    overflow: hidden;
+    border-radius: 20px;
+}
+.box::before
+{
+    content: '';
+    z-index: 11;
+    position: absolute;
+    width: 120%;
+    height: 50%;
+    background: linear-gradient(#ff3b05, #28005b);
+    animation: animate 4s linear infinite;
+}
+.box::after
+{
+    content: '';
+    z-index: 12;
+    position: absolute;
+    inset: 4px;
+    background: #b05505;
+    border-radius: 16px;
+}
+@keyframes animate
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+.box h3 {
+    color: #fff;
+    font-size: 180%;
+    z-index: 13;
+}
+/*click effect*/
+.button{
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.button:active{
+    transform: scale(0.96);
+}
+
+/*custom cursor*/
+.rounded{
+    width: 30px;
+    height: 30px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+  }
+  
+  .pointed{
+    width: 7px;
+    height: 7px;
+    background-color: white;
+    border-radius: 50%;
+  }
