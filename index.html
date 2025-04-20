@@ -40,7 +40,7 @@
         <h3>BioNic</h3>
     </button>
 
-    <audio id="click-sound" src="/MAKEUP/l96.mp3" preload="auto"></audio>
+    
 
     </main>
 
@@ -50,5 +50,24 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="script.js"></script>
+
+    <audio id="clickSound" src="MAKEUP/click.mp3" preload="auto"></audio>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const clickSound = document.getElementById("clickSound");
+    
+    // Add click event listener to the entire document
+    document.addEventListener("click", (e) => {
+      // Don't play sound if clicking on audio element itself
+      if (e.target.id !== 'clickSound') {
+        clickSound.currentTime = 0;
+        clickSound.play().catch(error => {
+          console.log("Audio playback failed:", error);
+        });
+      }
+    });
+  });
+</script>
 </body>
 </html>

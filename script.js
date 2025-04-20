@@ -87,22 +87,3 @@ const moveCursor = (e)=> {
 }
 
 window.addEventListener('mousemove', moveCursor)
-
-
-// Get a reference to the audio element
-const clickSound = document.getElementById("click-sound");
-
-// Function to play the click sound
-function playClickSound() {
-    clickSound.currentTime = 0; // Reset the audio to the beginning (in case it's already playing)
-    clickSound.play(); // Play the audio
-}
-
-// Attach the playClickSound function to elements you want to have the click sound
-const clickableElements = document.querySelectorAll(".clickable-element"); // Replace with the actual class name of clickable elements
-
-clickableElements.forEach((element) => {
-    element.addEventListener("click", playClickSound);
-});
-var sound1 = new Audio ();
-sound1.scr = "MAKEUP/l96.mp3";
