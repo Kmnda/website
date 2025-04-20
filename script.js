@@ -87,3 +87,20 @@ const moveCursor = (e)=> {
 }
 
 window.addEventListener('mousemove', moveCursor)
+
+// Click popup animation
+const clickPopup = document.getElementById('click-popup');
+
+document.addEventListener('click', (e) => {
+    // Position the popup at click coordinates
+    clickPopup.style.left = (e.clientX - 25) + 'px';
+    clickPopup.style.top = (e.clientY - 25) + 'px';
+    
+    // Add active class to show animation
+    clickPopup.classList.add('active');
+    
+    // Remove active class after animation completes
+    setTimeout(() => {
+        clickPopup.classList.remove('active');
+    }, 300);
+});
