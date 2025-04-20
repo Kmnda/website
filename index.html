@@ -15,9 +15,11 @@
                     <a href="#">Stats</a>
                 </li>
                 <li>
+                    <a href="#">Golden Players</a>
+                </li>
+                <li>
                     <a href="#">Login</a>
                 </li>
-
             </ul>
         </nav>
     </header>
@@ -45,9 +47,85 @@
 
     </main>
 
+    <!-- Stats Popup -->
+    <div id="statsPopup" class="stats-popup">
+        <div class="stats-popup-content">
+            <span class="close-popup">&times;</span>
+            <h2>BioNic Network</h2>
+            <div class="stats-content">
+                <div class="server-status">
+                    <h3>Active Indian Servers</h3>
+                    <div id="serverList" class="server-list">
+                        <div class="loading">Loading servers...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    
-
+    <!-- Golden Players Popup -->
+    <div id="goldenPlayersPopup" class="stats-popup">
+        <div class="stats-popup-content">
+            <span class="close-popup">&times;</span>
+            <h2>Key Players</h2>
+            <div class="stats-content">
+                <div class="player-profile">
+                    <div class="steam-profile">
+                        <div class="profile-header">
+                            <img src="" alt="Steam Avatar" id="steamAvatar" class="steam-avatar">
+                            <div class="profile-info">
+                                <h3 id="steamName">Loading...</h3>
+                                <p id="steamStatus" class="steam-status">Loading status...</p>
+                            </div>
+                        </div>
+                        <div class="rust-stats">
+                            <h3 class="rust-title">Rust Statistics</h3>
+                            <div class="profile-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Hours Played</span>
+                                    <span id="rustHours" class="stat-value">Loading...</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">K/D Ratio</span>
+                                    <span id="rustKD" class="stat-value">Loading...</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Headshot %</span>
+                                    <span id="rustHeadshot" class="stat-value">Loading...</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Survival Time</span>
+                                    <span id="rustSurvival" class="stat-value">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="battlemetrics-stats">
+                            <h3 class="battlemetrics-title">BattleMetrics Data</h3>
+                            <div class="profile-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Most Played Server</span>
+                                    <span id="mostPlayedServer" class="stat-value">Loading...</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Last Played Rust</span>
+                                    <span id="lastPlayedRust" class="stat-value">Loading...</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Server Rank</span>
+                                    <span id="serverRank" class="stat-value">Loading...</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Last Seen</span>
+                                    <span id="lastSeen" class="stat-value">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://steamcommunity.com/profiles/76561199079667777/" target="_blank" class="steam-link">View Steam Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="script.js"></script>
