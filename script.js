@@ -387,3 +387,67 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 });
+
+// Login Popup Functionality
+const loginButton = document.getElementById('loginButton');
+const loginPopup = document.getElementById('loginPopup');
+const closeLoginPopup = loginPopup.querySelector('.close-popup');
+const steamLoginButton = document.getElementById('steamLogin');
+
+// Steam OpenID configuration
+const STEAM_API_KEY = 'YOUR_STEAM_API_KEY'; // Replace with your Steam API key
+const STEAM_RETURN_URL = window.location.origin + '/auth/steam/callback';
+const STEAM_REALM = window.location.origin;
+
+// Show login popup
+loginButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    loginPopup.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+});
+
+// Close login popup
+closeLoginPopup.addEventListener('click', () => {
+    loginPopup.style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
+
+// Close login popup when clicking outside
+window.addEventListener('click', (e) => {
+    if (e.target === loginPopup) {
+        loginPopup.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Handle Steam login
+steamLoginButton.addEventListener('click', () => {
+    // Construct Steam OpenID URL
+    const steamLoginUrl = `https://steamcommunity.com/openid/login?` +
+        `openid.ns=http://specs.openid.net/auth/2.0&` +
+        `openid.mode=checkid_setup&` +
+        `openid.return_to=${encodeURIComponent(STEAM_RETURN_URL)}&` +
+        `openid.realm=${encodeURIComponent(STEAM_REALM)}&` +
+        `openid.identity=http://specs.openid.net/auth/2.0/identifier_select&` +
+        `openid.claimed_id=http://specs.openid.net/auth/2.0/identifier_select`;
+
+    // Redirect to Steam login
+    window.location.href = steamLoginUrl;
+});
+
+// Handle regular login form submission
+const loginForm = document.querySelector('.login-form');
+loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    try {
+        // Here you would typically make an API call to your backend
+        // For now, we'll just show a success message
+        alert('Login functionality will be implemented with your backend API');
+    } catch (error) {
+        console.error('Login error:', error);
+        alert('Login failed. Please try again.');
+    }
+});

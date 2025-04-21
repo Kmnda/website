@@ -18,7 +18,7 @@
                     <a href="#">Golden Players</a>
                 </li>
                 <li>
-                    <a href="#">Login</a>
+                    <a href="#" id="loginButton">Login</a>
                 </li>
             </ul>
         </nav>
@@ -122,6 +122,28 @@
                         </div>
                         <a href="https://steamcommunity.com/profiles/76561199079667777/" target="_blank" class="steam-link">View Steam Profile</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Popup -->
+    <div id="loginPopup" class="login-popup">
+        <div class="login-popup-content">
+            <span class="close-popup">&times;</span>
+            <h2>Login to BioNic</h2>
+            <div class="login-options">
+                <button id="steamLogin" class="steam-login-btn">
+                    <img src="MAKEUP/steam-logo.png" alt="Steam Logo">
+                    Login with Steam
+                </button>
+                <div class="login-divider">
+                    <span>or</span>
+                </div>
+                <div class="login-form">
+                    <input type="text" placeholder="Username" id="username">
+                    <input type="password" placeholder="Password" id="password">
+                    <button class="login-submit">Login</button>
                 </div>
             </div>
         </div>
